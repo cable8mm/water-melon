@@ -40,6 +40,12 @@ print $artist->parse()['ARTISTNAME'];
 - [Album Document](docs/album.md)
 - [Artist Document](docs/artist.md)
 
+## Lint
+
+```sh
+composer lint
+```
+
 ## Test
 
 ```sh
