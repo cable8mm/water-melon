@@ -1,0 +1,47 @@
+{
+    "name": "cable8mm/water-melon",
+    "description": "Water Melon is simple melon.com api sdk for php",
+    "keywords": [
+        "phpunit",
+        "php",
+        "development",
+        "crawler",
+        "melon"
+    ],
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Lee",
+            "email": "cable8mm@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Cable8mm\\WaterMelon\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cable8mm\\WaterMelon\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": [
+            "./vendor/bin/phpunit tests"
+        ]
+    }
+}
