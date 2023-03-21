@@ -10,7 +10,7 @@ class MelonArtist
 
     private int $id;
 
-    private array $response;
+    private array $response = [];
 
     public function __construct(int $id)
     {
@@ -19,6 +19,10 @@ class MelonArtist
 
     public function parse()
     {
+        if ($this->response) {
+            return $this->response;
+        }
+
         $url = "https://m2.melon.com/m6/v3/artist/home/basicInfo.json?artistId={$this->id}";
 
         $client = new \GuzzleHttp\Client();

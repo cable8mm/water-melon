@@ -177,6 +177,7 @@ $RECYCLE.BIN/
 
 # Generated files
 .phpunit.result.cache
+.phpunit.cache
 
 # PHPUnit
 /app/phpunit.xml
@@ -186,3 +187,5 @@ $RECYCLE.BIN/
 /build/
 
 # End of https://www.gitignore.io/api/git,macos,windows,composer,phpstorm,visualstudiocode
+
+.vscode

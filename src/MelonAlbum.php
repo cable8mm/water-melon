@@ -8,9 +8,9 @@ class MelonAlbum
 {
     use Makeable;
 
-    private int $id;
+    public int $id;
 
-    private array $response;
+    private array $response = [];
 
     public function __construct(int $id)
     {
@@ -19,6 +19,10 @@ class MelonAlbum
 
     public function parse()
     {
+        if ($this->response) {
+            return $this->response;
+        }
+
         $url = "https://m2.melon.com/m6/v2/album/info.json?albumId={$this->id}";
 
         $client = new \GuzzleHttp\Client();

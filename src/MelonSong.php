@@ -8,9 +8,9 @@ class MelonSong
 {
     use Makeable;
 
-    private int $id;
+    public int $id;
 
-    private array $response;
+    private array $response = [];
 
     public function __construct(int $id)
     {
@@ -19,6 +19,10 @@ class MelonSong
 
     public function parse()
     {
+        if ($this->response) {
+            return $this->response;
+        }
+
         $url = "https://m2.melon.com/m6/v3/song/info.json?songId={$this->id}";
 
         $client = new \GuzzleHttp\Client();

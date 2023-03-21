@@ -19,11 +19,11 @@ print $song->parse()['SONGINFO']['SONGNAME'];
 
 // print Ditto
 
-$album = MelonAlbum::make(3114174);
+$album = MelonAlbum::make(11127145);
 
 print $album->parse()['ALBUMINFO']['ALBUMNAME'];
 
-// print Sound Clash
+// print NewJeans 'OMG'
 
 $artist = MelonArtist::make(3114174);
 
