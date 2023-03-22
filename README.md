@@ -1,3 +1,5 @@
+[![PHP Linting (Pint)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml) [![Latest Stable Version](http://poser.pugx.org/cable8mm/water-melon/v)](https://packagist.org/packages/cable8mm/water-melon) [![Total Downloads](http://poser.pugx.org/cable8mm/water-melon/downloads)](https://packagist.org/packages/cable8mm/water-melon) [![Latest Unstable Version](http://poser.pugx.org/cable8mm/water-melon/v/unstable)](https://packagist.org/packages/cable8mm/water-melon) [![License](http://poser.pugx.org/cable8mm/water-melon/license)](https://packagist.org/packages/cable8mm/water-melon) [![PHP Version Require](http://poser.pugx.org/cable8mm/water-melon/require/php)](https://packagist.org/packages/cable8mm/water-melon)
+
 # Water Melon
 
 Water Melon 프로젝트는 멜론 ID로 멜론 정보를 조회할 수 있는 라이브러리입니다.
@@ -45,7 +47,7 @@ print $artistResource->melon_artistid;
 print $artistResource->name;
 print $artistResource->featured_image_path;
 
-$album = AlbumResource::make($waterMelon->song);
+$album = AlbumResource::make($waterMelon->album);
 
 print $albumResource->melon_albumid;
 print $albumResource->title;
