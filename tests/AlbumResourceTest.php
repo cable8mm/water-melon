@@ -3,7 +3,6 @@
 namespace Cable8mm\WaterMelon\Tests;
 
 use Cable8mm\WaterMelon\Resources\AlbumResource;
-use Cable8mm\WaterMelon\Resources\SongResource;
 use Cable8mm\WaterMelon\WaterMelon;
 use PHPUnit\Framework\TestCase;
 
