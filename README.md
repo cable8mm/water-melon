@@ -13,23 +13,19 @@ composer require cable8mm/water-melon
 Get song info:
 
 ```php
-$song = MelonSong::make(35945927);
+$waterMelon = WaterMelon::make(35945927);   // Ditto's song id
 
-print $song['SONGINFO']['SONGNAME'];
+print $waterMelon->song->id;
 
-// print Ditto
+// print 35945927
 
-$album = MelonAlbum::make(11127145);
+print $waterMelon->album->id;
 
-print $album['ALBUMINFO']['ALBUMNAME'];
+// print 11127145
 
-// print NewJeans 'OMG'
+print $waterMelon->artists[0]->id;
 
-$artist = MelonArtist::make(3114174);
-
-print $artist['ARTISTNAME'];
-
-// print NewJeans
+// print 3114174
 ```
 
 ## Specification
