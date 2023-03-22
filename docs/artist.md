@@ -8,46 +8,46 @@ url : https://m2.melon.com/m6/v3/artist/home/basicInfo.json?artistId={$this->id}
   "MENUID": "1000000412",
   "ARTISTYN": "N",
   "CONTSTYPECODE": "N10006",
-  "ARTISTID": "3114174",
-  "ARTISTNAME": "NewJeans",
-  "ARTISTIMGLARGE": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20230102131651_org.jpg?5ca391ef957f06aa173cfb18a6b4859f/melon/resize/1000/optimize/90",
-  "ARTISTIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20230102131651_500.jpg?5ca391ef957f06aa173cfb18a6b4859f/melon/resize/200/optimize/90",
-  "POSTIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20230102131651_500.jpg?5ca391ef957f06aa173cfb18a6b4859f/melon/optimize/90",
-  "POSTEDITIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20230102131651_500.jpg?5ca391ef957f06aa173cfb18a6b4859f/melon/resize/200/optimize/90",
+  "ARTISTID": "756530",
+  "ARTISTNAME": "솔라 (마마무)",
+  "ARTISTIMGLARGE": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/007/56/530/756530_20230321133428_org.jpg?aeabfd6f9270dbe26edee82c1c24bf0b/melon/resize/1000/optimize/90",
+  "ARTISTIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/007/56/530/756530_20230321133428_500.jpg?aeabfd6f9270dbe26edee82c1c24bf0b/melon/resize/200/optimize/90",
+  "POSTIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/007/56/530/756530_20230321133428_500.jpg?aeabfd6f9270dbe26edee82c1c24bf0b/melon/optimize/90",
+  "POSTEDITIMG": "https://cdnimg.melon.co.kr/cm2/artistcrop/images/007/56/530/756530_20230321133428_500.jpg?aeabfd6f9270dbe26edee82c1c24bf0b/melon/resize/200/optimize/90",
   "PROFILE": {
-    "DESC": "NewJeans 채널의 방문을 환영합니다. 자주 놀러 오세요~"
+    "DESC": "솔라 (마마무)의 음악과 티타임 어떠세요?"
   },
   "TITLESONG": {
-    "SONGID": "35985167",
-    "SONGNAME": "OMG",
-    "ALBUMID": "11127145",
-    "ALBUMNAME": "NewJeans 'OMG'",
+    "SONGID": "36264543",
+    "SONGNAME": "Eternal",
+    "ALBUMID": "11200325",
+    "ALBUMNAME": "판도라 : 조작된 낙원 OST Part 1",
     "ARTISTLIST": [
       {
-        "ARTISTID": "3114174",
-        "ARTISTNAME": "NewJeans"
+        "ARTISTID": "756530",
+        "ARTISTNAME": "솔라 (마마무)"
       }
     ],
-    "PLAYTIME": "218",
+    "PLAYTIME": "186",
     "GENRELIST": [
       {
-        "GENRECODE": "GC0011",
-        "GENRENAME": "Dance"
+        "GENRECODE": "GC0069",
+        "GENRENAME": "한국 드라마"
+      },
+      {
+        "GENRECODE": "GC0035",
+        "GENRENAME": "Rock"
       },
       {
         "GENRECODE": "GC0091",
         "GENRENAME": "아이돌 여자"
       },
       {
-        "GENRECODE": "GC0093",
-        "GENRENAME": "아이돌 댄스"
-      },
-      {
-        "GENRECODE": "GC0167",
-        "GENRENAME": "댄스 20'"
+        "GENRECODE": "GC0169",
+        "GENRENAME": "록/메탈 20'"
       }
     ],
-    "ISMV": true,
+    "ISMV": false,
     "ISADULT": false,
     "ISFREE": false,
     "ISHITSONG": false,
@@ -55,62 +55,22 @@ url : https://m2.melon.com/m6/v3/artist/home/basicInfo.json?artistId={$this->id}
     "ISTITLESONG": true,
     "ISSERVICE": true,
     "ISTRACKZERO": false,
-    "ALBUMIMG": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/resize/144/optimize/90",
-    "ALBUMIMGPATH": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/resize/144/optimize/90",
-    "ALBUMIMGLARGE": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/optimize/90",
-    "ALBUMIMGSMALL": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/resize/50/optimize/90",
-    "ISSUEDATE": "2023.01.02",
+    "ALBUMIMG": "https://cdnimg.melon.co.kr/cm2/album/images/112/00/325/11200325_20230309180116_500.jpg?cd9b1b372afa91adf4439d2f5579bf41/melon/resize/144/optimize/90",
+    "ALBUMIMGPATH": "https://cdnimg.melon.co.kr/cm2/album/images/112/00/325/11200325_20230309180116_500.jpg?cd9b1b372afa91adf4439d2f5579bf41/melon/resize/144/optimize/90",
+    "ALBUMIMGLARGE": "https://cdnimg.melon.co.kr/cm2/album/images/112/00/325/11200325_20230309180116_500.jpg?cd9b1b372afa91adf4439d2f5579bf41/melon/optimize/90",
+    "ALBUMIMGSMALL": "https://cdnimg.melon.co.kr/cm2/album/images/112/00/325/11200325_20230309180116_500.jpg?cd9b1b372afa91adf4439d2f5579bf41/melon/resize/50/optimize/90",
+    "ISSUEDATE": "2023.03.12",
     "CTYPE": "1",
     "CONTSTYPECODE": "N10001"
   },
-  "FANCNT": "106468",
-  "FANTALKCNT": "25697",
-  "REPSONGBUTTON": "N",
+  "FANCNT": "42040",
+  "FANTALKCNT": "1581",
+  "REPSONGBUTTON": "Y",
   "FANANNIVERSARYINFO": {},
-  "FORESTARTISTINFO": {
-    "ARTISTID": "3114174",
-    "ACHIEVEMENTSCOUNT": "0",
-    "ACHIEVEMENTRATE": "9",
-    "ISENROLL": false,
-    "ENROLLCOUNT": "4,126",
-    "ENROLL": 4126,
-    "PARTICIPATIONAMOUNT": "1,846,251",
-    "FORESTIMAGEPATH": "https://cdnimg.melon.co.kr/resource/image/cds/artist/img_artistch_sooptreaming_1.png",
-    "LINK": {
-      "LINKTYPE": "ZA",
-      "LINKURL": "http://m2.melon.com/event/forest/main.htm?artistId=3114174"
-    }
-  },
+  "FORESTARTISTINFO": {},
   "BILLIONSCLUBINFO": {},
-  "MELONHALLLIST": [
-    {
-      "ISSERVICE": true,
-      "ALBUMID": "11127145",
-      "ALBUMNAME": "NewJeans 'OMG'",
-      "ARTISTLIST": [
-        {
-          "ARTISTID": "3114174",
-          "ARTISTNAME": "NewJeans"
-        }
-      ],
-      "ISSUEDATE": "2023.01.02",
-      "ISTRACKZERO": false,
-      "ALBUMIMG": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/resize/255/optimize/90",
-      "ALBUMIMGLARGE": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg?c8aadf63675571818c6520070525c9ac/melon/optimize/90",
-      "SONGCNT": "2",
-      "CTYPE": "2",
-      "CONTSTYPECODE": "N10002",
-      "MILLIONSALBUMBADGE": "3",
-      "LINK": {
-        "LINKTYPE": "ZA",
-        "LINKURL": "http://m2.melon.com/melonhall/sector/album/report.htm?albumId=11127145&issueDate=202301021800"
-      }
-    }
-  ],
-  "MELONHALLLINKINFO": {
-    "LINKTYPE": "ZA",
-    "LINKURL": "http://m2.melon.com/melonhall/sector/album.htm"
-  },
+  "MELONHALLLIST": [],
+  "MELONHALLLINKINFO": {},
   "SECTION": "아티스트상세",
   "PAGE": "아티스트상세_아티스트홈"
 }
