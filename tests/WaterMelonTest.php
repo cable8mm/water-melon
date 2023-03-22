@@ -2,8 +2,6 @@
 
 namespace Cable8mm\WaterMelon\Tests;
 
-use Cable8mm\WaterMelon\MelonAlbum;
-use Cable8mm\WaterMelon\MelonSong;
 use Cable8mm\WaterMelon\WaterMelon;
 use PHPUnit\Framework\TestCase;
 
