@@ -11,6 +11,6 @@ class MelonArtistTest extends TestCase
     {
         $melonArtist = MelonArtist::make(3114174);
 
-        $this->assertEquals('NewJeans', $melonArtist->parse()['ARTISTNAME']);
+        $this->assertEquals('NewJeans', $melonArtist['ARTISTNAME']);
     }
 }

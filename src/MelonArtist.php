@@ -2,21 +2,8 @@
 
 namespace Cable8mm\WaterMelon;
 
-use Cable8mm\WaterMelon\Traits\Makeable;
-
-class MelonArtist
+class MelonArtist extends Melon
 {
-    use Makeable;
-
-    private int $id;
-
-    private array $response = [];
-
-    public function __construct(int $id)
-    {
-        $this->id = $id;
-    }
-
     public function parse()
     {
         if ($this->response) {

@@ -11,6 +11,6 @@ class MelonAlbumTest extends TestCase
     {
         $melonAlbum = MelonAlbum::make(11127145);
 
-        $this->assertEquals('NewJeans \'OMG\'', $melonAlbum->parse()['ALBUMINFO']['ALBUMNAME']);
+        $this->assertEquals('NewJeans \'OMG\'', $melonAlbum['ALBUMINFO']['ALBUMNAME']);
     }
 }

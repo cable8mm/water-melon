@@ -11,6 +11,6 @@ class MelonSongTest extends TestCase
     {
         $melonSong = MelonSong::make(35945927);
 
-        $this->assertEquals('Ditto', $melonSong->parse()['SONGINFO']['SONGNAME']);
+        $this->assertEquals('Ditto', $melonSong['SONGINFO']['SONGNAME']);
     }
 }

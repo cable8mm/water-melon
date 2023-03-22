@@ -15,19 +15,19 @@ Get song info:
 ```php
 $song = MelonSong::make(35945927);
 
-print $song->parse()['SONGINFO']['SONGNAME'];
+print $song['SONGINFO']['SONGNAME'];
 
 // print Ditto
 
 $album = MelonAlbum::make(11127145);
 
-print $album->parse()['ALBUMINFO']['ALBUMNAME'];
+print $album['ALBUMINFO']['ALBUMNAME'];
 
 // print NewJeans 'OMG'
 
 $artist = MelonArtist::make(3114174);
 
-print $artist->parse()['ARTISTNAME'];
+print $artist['ARTISTNAME'];
 
 // print NewJeans
 ```
