@@ -28,6 +28,31 @@ print $waterMelon->artists[0]->id;
 // print 3114174
 ```
 
+and fantastic resource inspired by laravel resource:
+
+```php
+$waterMelon = WaterMelon::make(35945927);   // Ditto's song id
+
+$song = SongResource::make($waterMelon->song);
+
+print $song->title;
+print $song->album_id;
+print $song->artwork_image_path;
+
+$artist = ArtistResource::make($waterMelon->artists[0]);
+
+print $artistResource->melon_artistid;
+print $artistResource->name;
+print $artistResource->featured_image_path;
+
+$album = AlbumResource::make($waterMelon->song);
+
+print $albumResource->melon_albumid;
+print $albumResource->title;
+print $albumResource->album_cover_path;
+print $albumResource->released_at;
+```
+
 ## Specification
 
 멜론에서 보내는 Key/Value는 docs폴더의 문서를 참고하세요.
