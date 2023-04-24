@@ -59,6 +59,6 @@ abstract class Resource implements ArrayAccess
      */
     public static function emptyToNull(string|null $path): string|null
     {
-        return  empty($path) || preg_match('/_default_[^\/]+\.jpg/', $path) ? null : $path;
+        return empty($path) || preg_match('/_default_[^\/]+\.jpg/', $path) ? null : $path;
     }
 }
