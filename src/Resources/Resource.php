@@ -51,4 +51,14 @@ abstract class Resource implements ArrayAccess
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
+
+    /**
+     * Melon default image path to null
+     *
+     * @example https://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/sns_post_default_500.jpg
+     */
+    public static function emptyToNull(string|null $path): string|null
+    {
+        return  empty($path) || preg_match('/_default_[^\/]+\.jpg/', $path) ? null : $path;
+    }
 }
