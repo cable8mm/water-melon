@@ -14,7 +14,13 @@ class MelonSong extends Melon
 
         $client = new \GuzzleHttp\Client();
 
-        $response = $client->request('GET', $url);
+        $requestOptions = [
+            'headers' => [
+                'Cookie' => 'PCID='.rand().';',
+            ]
+        ];
+
+        $response = $client->request('GET', $url, $requestOptions);
 
         $json = json_decode($response->getBody()->getContents(), true);
 
