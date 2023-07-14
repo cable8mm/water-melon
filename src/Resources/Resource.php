@@ -57,7 +57,7 @@ abstract class Resource implements ArrayAccess
      *
      * @example https://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/sns_post_default_500.jpg
      */
-    public static function emptyToNull(string|null $path): string|null
+    public static function emptyToNull(?string $path): ?string
     {
         return empty($path) || preg_match('/_default_[^\/]+\.jpg/', $path) ? null : $path;
     }

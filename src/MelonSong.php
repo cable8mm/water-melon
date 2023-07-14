@@ -17,7 +17,7 @@ class MelonSong extends Melon
         $requestOptions = [
             'headers' => [
                 'Cookie' => 'PCID='.rand().';',
-            ]
+            ],
         ];
 
         $response = $client->request('GET', $url, $requestOptions);
