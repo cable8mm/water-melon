@@ -1,8 +1,14 @@
-[![PHP Linting (Pint)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml) [![Latest Stable Version](http://poser.pugx.org/cable8mm/water-melon/v)](https://packagist.org/packages/cable8mm/water-melon) [![Total Downloads](http://poser.pugx.org/cable8mm/water-melon/downloads)](https://packagist.org/packages/cable8mm/water-melon) [![Latest Unstable Version](http://poser.pugx.org/cable8mm/water-melon/v/unstable)](https://packagist.org/packages/cable8mm/water-melon) [![License](http://poser.pugx.org/cable8mm/water-melon/license)](https://packagist.org/packages/cable8mm/water-melon) [![PHP Version Require](http://poser.pugx.org/cable8mm/water-melon/require/php)](https://packagist.org/packages/cable8mm/water-melon)
+[![PHP Linting (Pint)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml)
+[![Build & Test](https://github.com/cable8mm/water-melon/actions/workflows/php.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/php.yml)
+[![Latest Stable Version](http://poser.pugx.org/cable8mm/water-melon/v)](https://packagist.org/packages/cable8mm/water-melon)
+[![Total Downloads](http://poser.pugx.org/cable8mm/water-melon/downloads)](https://packagist.org/packages/cable8mm/water-melon)
+[![Latest Unstable Version](http://poser.pugx.org/cable8mm/water-melon/v/unstable)](https://packagist.org/packages/cable8mm/water-melon)
+[![License](http://poser.pugx.org/cable8mm/water-melon/license)](https://packagist.org/packages/cable8mm/water-melon)
+[![PHP Version Require](http://poser.pugx.org/cable8mm/water-melon/require/php)](https://packagist.org/packages/cable8mm/water-melon)
 
 # Water Melon
 
-Water Melon 프로젝트는 멜론 ID로 멜론 정보를 조회할 수 있는 라이브러리입니다.
+This library is for fetching information about artists, songs and albums through IDs.
 
 ## Installation
 
@@ -57,7 +63,7 @@ print $albumResource->released_at;
 
 ## Specification
 
-멜론에서 보내는 Key/Value는 docs폴더의 문서를 참고하세요.
+You can refer to the Markdown documents for melon.com JSON specifications:
 
 - [Song Document](docs/song.md)
 - [Album Document](docs/album.md)
