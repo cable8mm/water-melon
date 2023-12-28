@@ -2,7 +2,7 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
-class SongResource extends Resource
+class SongNullResource extends Resource
 {
     public function toArray()
     {
