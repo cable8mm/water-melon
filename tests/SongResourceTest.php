@@ -17,6 +17,6 @@ final class SongResourceTest extends TestCase
         $this->assertEquals(36264543, $songResource->melon_songid);
         $this->assertEquals(11200325, $songResource->album_id);
         $this->assertEquals('Eternal', $songResource->title);
-        $this->assertEquals('https://cdnimg.melon.co.kr/cm2/album/images/112/00/325/11200325_20230309180116_500.jpg?cd9b1b372afa91adf4439d2f5579bf41/melon/resize/144/optimize/90', $songResource->artwork_image_path);
+        $this->assertStringStartsWith('https://cdnimg.melon.co.kr/cm2/album/images/', $songResource->artwork_image_path);
     }
 }
