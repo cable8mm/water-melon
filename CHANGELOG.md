@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.1.2 - 2024-03-03
+
+### What's Changed
+
+* Fix bugs by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/4
+* Configure php version tests from 8.0 to 8.3 by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/5
+
+**Full Changelog**: https://github.com/cable8mm/water-melon/compare/v1.1.1...v1.1.2
+
 ## v1.1.1 - 2023-07-14
 
 ## What's Changed
