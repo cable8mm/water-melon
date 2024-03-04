@@ -1,14 +1,14 @@
 [![PHP Linting (Pint)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/lint.yml)
 [![Build & Test](https://github.com/cable8mm/water-melon/actions/workflows/php.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/php.yml)
-[![Latest Stable Version](http://poser.pugx.org/cable8mm/water-melon/v)](https://packagist.org/packages/cable8mm/water-melon)
-[![Total Downloads](http://poser.pugx.org/cable8mm/water-melon/downloads)](https://packagist.org/packages/cable8mm/water-melon)
-[![Latest Unstable Version](http://poser.pugx.org/cable8mm/water-melon/v/unstable)](https://packagist.org/packages/cable8mm/water-melon)
-[![License](http://poser.pugx.org/cable8mm/water-melon/license)](https://packagist.org/packages/cable8mm/water-melon)
-[![PHP Version Require](http://poser.pugx.org/cable8mm/water-melon/require/php)](https://packagist.org/packages/cable8mm/water-melon)
+![Packagist Downloads](https://img.shields.io/packagist/dt/cable8mm/water-melon)
+![Packagist Version](https://img.shields.io/packagist/v/cable8mm/water-melon)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/cable8mm/water-melon/php)
+![Packagist Stars](https://img.shields.io/packagist/stars/cable8mm/water-melon)
+![Packagist License](https://img.shields.io/packagist/l/cable8mm/water-melon)
 
 # Water Melon
 
-This library is for fetching information about artists, songs and albums through IDs.
+This library is designed for retrieving information about artists, songs, and albums using their respective IDs from https://www.melon.com.
 
 ## Installation
 
