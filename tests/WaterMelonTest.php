@@ -27,4 +27,17 @@ final class WaterMelonTest extends TestCase
 
         $this->assertEquals(3114174, $waterMelon->getArtists()[0]->id); // 3114174 is Ditto's artist id
     }
+
+    public function test_get_album_id_as_legacy(): void
+    {
+        $waterMelon = new WaterMelon(35945927);
+
+        $artistId = $waterMelon->artists[0]->id;
+
+        $this->assertEquals(3114174, $artistId); // 11127145 is Ditto's album id
+
+        $albumId = $waterMelon->album->id;
+
+        $this->assertEquals(11127145, $albumId); // 11127145 is Ditto's album id
+    }
 }
