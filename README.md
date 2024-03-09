@@ -1,5 +1,5 @@
-[![code-style](https://github.com/companimal/water-melon/actions/workflows/code-style.yml/badge.svg)](https://github.com/companimal/water-melon/actions/workflows/code-style.yml)
-[![run-tests](https://github.com/companimal/water-melon/actions/workflows/run-tests.yml/badge.svg)](https://github.com/companimal/water-melon/actions/workflows/run-tests.yml)
+[![code-style](https://github.com/cable8mm/water-melon/actions/workflows/code-style.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/code-style.yml)
+[![run-tests](https://github.com/cable8mm/water-melon/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cable8mm/water-melon/actions/workflows/run-tests.yml)
 ![Packagist Version](https://img.shields.io/packagist/v/cable8mm/water-melon)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/cable8mm/water-melon)
 ![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/cable8mm/water-melon/php)
