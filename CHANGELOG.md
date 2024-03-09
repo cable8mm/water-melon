@@ -1,5 +1,17 @@
 # Release Notes
 
+## v1.1.3 - 2024-03-09
+
+### What's Changed
+
+* Remove styleci config by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/6
+* Replace badges from PUGX with shields.io by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/7
+* Reorganize configurations for PHPUnit and Laravel Pint by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/8
+* Configure apidoc to github pages by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/9
+* Fix a badge bug in the readme by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/10
+
+**Full Changelog**: https://github.com/cable8mm/water-melon/compare/v1.1.2...v1.1.3
+
 ## v1.1.2 - 2024-03-03
 
 ### What's Changed
