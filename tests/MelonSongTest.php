@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MelonSongTest extends TestCase
 {
-    public function test_get_melon_song()
+    public function test_get_melon_song(): void
     {
         $melonSong = MelonSong::make(35945927);
 

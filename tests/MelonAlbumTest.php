@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MelonAlbumTest extends TestCase
 {
-    public function test_get_melon_album()
+    public function test_get_melon_album(): void
     {
         $melonAlbum = MelonAlbum::make(11127145);
 
