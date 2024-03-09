@@ -2,9 +2,15 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+/**
+ * Album resource with null for mapping from melon.com.
+ */
 class AlbumNullResource extends Resource
 {
-    public function toArray()
+    /**
+     * {@inheritDoc}
+     */
+    public function toArray(): array
     {
         return [
             'melon_albumid' => $this->melon['ALBUMINFO']['ALBUMID'],

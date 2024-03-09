@@ -2,9 +2,17 @@
 
 namespace Cable8mm\WaterMelon;
 
+/**
+ * Fetches information about a album from the melon.com API.
+ *
+ * @since  2023-03-20
+ */
 class MelonAlbum extends Melon
 {
-    public function parse()
+    /**
+     * {@inheritDoc}
+     */
+    public function parse(): array
     {
         if ($this->response) {
             return $this->response;

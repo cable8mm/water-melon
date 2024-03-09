@@ -6,29 +6,52 @@ use ArrayAccess;
 use Cable8mm\WaterMelon\Melon;
 use Cable8mm\WaterMelon\Traits\Makeable;
 
+/**
+ * Resource class for general melon resources.
+ */
 abstract class Resource implements ArrayAccess
 {
     use Makeable;
 
+    /**
+     * General melon resource class.
+     */
     public Melon $melon;
 
+    /**
+     * ArrayAccess implementation.
+     */
     public array $container = [];
 
-    abstract protected function toArray();
+    /**
+     * To get resource as array.
+     */
+    abstract protected function toArray(): array;
 
-    public function __construct($melon)
+    /**
+     * Constructor.
+     *
+     * @param  Melon  $melon  Melon class instance
+     */
+    public function __construct(Melon $melon)
     {
         $this->melon = $melon;
 
         $this->container = $this->toArray();
     }
 
-    public function __get($name)
+    /**
+     *  Reading data from inaccessible (protected or private) or non-existing properties.
+     */
+    public function __get(mixed $name): mixed
     {
         return $this->container[$name];
     }
 
-    public function offsetSet($offset, $value): void
+    /**
+     * ArrayAccess implementation.
+     */
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -37,23 +60,32 @@ abstract class Resource implements ArrayAccess
         }
     }
 
-    public function offsetExists($offset): bool
+    /**
+     * ArrayAccess implementation.
+     */
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
 
-    public function offsetUnset($offset): void
+    /**
+     * ArrayAccess implementation.
+     */
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }
 
-    public function offsetGet($offset): mixed
+    /**
+     * ArrayAccess implementation.
+     */
+    public function offsetGet(mixed $offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
-     * Melon default image path to null
+     * Infer the default image for Melon as null
      *
      * @example https://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/sns_post_default_500.jpg
      */

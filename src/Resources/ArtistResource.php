@@ -2,11 +2,16 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+/**
+ * Artist resource for mapping from melon.com.
+ */
 class ArtistResource extends Resource
 {
-    public function toArray()
+    /**
+     * {@inheritDoc}
+     */
+    public function toArray(): array
     {
-        // TODO : birth, sns, activity_regiment, activity_type, agency, genre
         return [
             'melon_artistid' => $this->melon['ARTISTID'],
             'name' => $this->melon['ARTISTNAME'],

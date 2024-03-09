@@ -2,9 +2,15 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+/**
+ * Song resource for mapping from melon.com.
+ */
 class SongResource extends Resource
 {
-    public function toArray()
+    /**
+     * {@inheritDoc}
+     */
+    public function toArray(): array
     {
         return [
             'album_id' => $this->melon['SONGINFO']['ALBUMID'],
