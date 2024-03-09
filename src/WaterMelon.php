@@ -15,15 +15,17 @@ class WaterMelon
 {
     use Makeable;
 
+    /** @var int Melon song ID. */
     private int $songid;
 
+    /** @var MelonSong Melon song. */
     public MelonSong $song;
 
+    /** $var MelonAlbum $album Melon album.
+     */
     public MelonAlbum $album;
 
-    /**
-     * @var Melon[]
-     */
+    /** @var Melon[] Melon artists. */
     public array $artists = [];
 
     /**
@@ -51,9 +53,7 @@ class WaterMelon
     {
         $this->album->parse();
 
-        /**
-         * @var $artist MelonArtist
-         */
+        /** @var $artist MelonArtist */
         foreach ($this->artists as $artist) {
             $artist->parse();
         }
@@ -63,6 +63,8 @@ class WaterMelon
 
     /**
      * Getter to get a information about a song.
+     *
+     * @example WaterMelon::make(35945927)->getSong();
      */
     public function getSong(): MelonSong
     {
@@ -71,6 +73,8 @@ class WaterMelon
 
     /**
      * Getter to get a information about a album.
+     *
+     * @example WaterMelon::make(35945927)->getAlbum();
      */
     public function getAlbum(): MelonAlbum
     {
@@ -81,6 +85,8 @@ class WaterMelon
      * Getter to get a information about artists.
      *
      * @return MelonArtist[]
+     *
+     * @example WaterMelon::make(35945927)->getSong();
      */
     public function getArtists(): array
     {

@@ -12,7 +12,7 @@ final class AlbumResourceTest extends TestCase
     {
         $waterMelon = WaterMelon::make(36264543);   // 솔라 (마마무) Eternal's song id
 
-        $albumResource = AlbumResource::make($waterMelon->song);
+        $albumResource = AlbumResource::make($waterMelon->getAlbum());
 
         $this->assertEquals(11200325, $albumResource->melon_albumid);
         $this->assertEquals('판도라 : 조작된 낙원 OST Part 1', $albumResource->title);

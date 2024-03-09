@@ -4,24 +4,19 @@ namespace Cable8mm\WaterMelon\Resources;
 
 use ArrayAccess;
 use Cable8mm\WaterMelon\Melon;
-use Cable8mm\WaterMelon\Traits\Makeable;
 
 /**
  * Resource class for general melon resources.
+ *
+ * @since  2023-03-20
  */
 abstract class Resource implements ArrayAccess
 {
-    use Makeable;
-
-    /**
-     * General melon resource class.
-     */
+    /** @var Melon General melon resource class. */
     public Melon $melon;
 
-    /**
-     * ArrayAccess implementation.
-     */
-    public array $container = [];
+    /** @var array ArrayAccess implementation. */
+    protected array $container = [];
 
     /**
      * To get resource as array.
@@ -86,6 +81,9 @@ abstract class Resource implements ArrayAccess
 
     /**
      * Infer the default image for Melon as null
+     *
+     * @param  ?string  $path  The path from Melon.
+     * @return ?string If it is default image, return null.
      *
      * @example https://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/sns_post_default_500.jpg
      */

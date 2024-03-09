@@ -3,7 +3,6 @@
 namespace Cable8mm\WaterMelon;
 
 use ArrayAccess;
-use Cable8mm\WaterMelon\Traits\Makeable;
 
 /**
  * Abstract class for WaterMelon classes.
@@ -12,10 +11,10 @@ use Cable8mm\WaterMelon\Traits\Makeable;
  */
 abstract class Melon implements ArrayAccess
 {
-    use Makeable;
-
+    /** @var int Song or album or artist Melon ID. */
     public int $id;
 
+    /** @var array ArrayAccess container. */
     protected array $response = [];
 
     /**
@@ -74,5 +73,16 @@ abstract class Melon implements ArrayAccess
     public function offsetGet(mixed $offset): mixed
     {
         return isset($this->response[$offset]) ? $this->response[$offset] : null;
+    }
+
+    /**
+     * Class factory to make Melon instance.
+     *
+     * @param  int  $id  The id of the class
+     * @param  bool  $autoParse  Automatically parse the response
+     */
+    public static function make(int $id, $autoParse = true): static
+    {
+        return new static($id, $autoParse);
     }
 }
