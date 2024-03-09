@@ -2,11 +2,22 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+use Cable8mm\WaterMelon\MelonArtist;
+
+/**
+ * Artist resource with null for mapping from melon.com.
+ *
+ * @since  2023-03-20
+ */
 class ArtistNullResource extends Resource
 {
-    public function toArray()
+    /**
+     * {@inheritDoc}
+     *
+     * Additionally, ArtistNullResource attributes are returned.
+     */
+    public function toArray(): array
     {
-        // TODO : birth, sns, activity_regiment, activity_type, agency, genre
         return [
             'melon_artistid' => $this->melon['ARTISTID'],
             'name' => $this->melon['ARTISTNAME'],
@@ -20,5 +31,13 @@ class ArtistNullResource extends Resource
             'agency' => null,
             'genre' => null,
         ];
+    }
+
+    /**
+     * Create a new ArtistNullResource instance.
+     */
+    public static function make(MelonArtist $melonArtist): static
+    {
+        return new static($melonArtist);
     }
 }

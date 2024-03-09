@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ArtistResourceTest extends TestCase
 {
-    public function test_artist_resource()
+    public function test_artist_resource(): void
     {
         $waterMelon = WaterMelon::make(36264543);   // 솔라 (마마무) Eternal's song id
 

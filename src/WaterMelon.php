@@ -5,28 +5,34 @@ namespace Cable8mm\WaterMelon;
 use Cable8mm\WaterMelon\Traits\Makeable;
 
 /**
- * WaterMelon
+ * Fetch all information about a song, song's albums and song's artists from the melon.com API.
  *
  * @author  Samgu Lee <cable8mm@gmail.com>
  *
  * @since  2023-03-20
- *
- * @license MIT License
  */
 class WaterMelon
 {
     use Makeable;
 
-    public const VER = '1.0.0';
-
+    /** @var int Melon song ID. */
     private int $songid;
 
+    /** @var MelonSong Melon song. */
     public MelonSong $song;
 
+    /** $var MelonAlbum $album Melon album.
+     */
     public MelonAlbum $album;
 
+    /** @var Melon[] Melon artists. */
     public array $artists = [];
 
+    /**
+     * Constructor.
+     *
+     * @param  int  $songid  Melon song ID.
+     */
     public function __construct(int $songid)
     {
         $this->songid = $songid;
@@ -40,10 +46,14 @@ class WaterMelon
         }
     }
 
-    public function parse()
+    /**
+     * To get a instance of the WaterMelon class after fetching information about a song from the melon.com API.
+     */
+    public function parse(): static
     {
         $this->album->parse();
 
+        /** @var $artist MelonArtist */
         foreach ($this->artists as $artist) {
             $artist->parse();
         }
@@ -51,23 +61,35 @@ class WaterMelon
         return $this;
     }
 
+    /**
+     * Getter to get a information about a song.
+     *
+     * @example WaterMelon::make(35945927)->getSong();
+     */
     public function getSong(): MelonSong
     {
         return $this->song;
     }
 
+    /**
+     * Getter to get a information about a album.
+     *
+     * @example WaterMelon::make(35945927)->getAlbum();
+     */
     public function getAlbum(): MelonAlbum
     {
         return $this->album;
     }
 
+    /**
+     * Getter to get a information about artists.
+     *
+     * @return MelonArtist[]
+     *
+     * @example WaterMelon::make(35945927)->getSong();
+     */
     public function getArtists(): array
     {
         return $this->artists;
-    }
-
-    public static function getVer(): string
-    {
-        return self::VER;
     }
 }

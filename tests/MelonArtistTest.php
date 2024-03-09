@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MelonArtistTest extends TestCase
 {
-    public function test_get_melon_artist()
+    public function test_get_melon_artist(): void
     {
         $melonArtist = MelonArtist::make(3114174);
 

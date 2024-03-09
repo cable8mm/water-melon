@@ -18,7 +18,7 @@ final class ArtistNullResourceTest extends TestCase
     //     $this->assertNull($artistResource->profile_image_path);
     // }
 
-    public function test_has_image_artist_resource()
+    public function test_has_image_artist_resource(): void
     {
         $melonArtist = MelonArtist::make(3055146);   // IVE
 
