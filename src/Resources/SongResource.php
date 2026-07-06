@@ -2,6 +2,7 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+use Cable8mm\WaterMelon\Contracts\SongResourceInterface;
 use Cable8mm\WaterMelon\MelonSong;
 
 /**
@@ -9,7 +10,7 @@ use Cable8mm\WaterMelon\MelonSong;
  *
  * @since  2023-03-20
  */
-class SongResource extends Resource
+class SongResource extends Resource implements SongResourceInterface
 {
     /**
      * {@inheritDoc}
@@ -24,6 +25,38 @@ class SongResource extends Resource
             'title' => $this->melon['SONGINFO']['SONGNAME'],
             'artwork_image_path' => $this->melon['SONGINFO']['ALBUMIMG'],
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMelonSongId(): int
+    {
+        return $this->melon['SONGINFO']['SONGID'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTitle(): string
+    {
+        return $this->melon['SONGINFO']['SONGNAME'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlbumId(): int
+    {
+        return $this->melon['SONGINFO']['ALBUMID'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getArtworkImagePath(): ?string
+    {
+        return self::emptyToNull($this->melon['SONGINFO']['ALBUMIMG']);
     }
 
     /**

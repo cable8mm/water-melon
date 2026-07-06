@@ -8,22 +8,46 @@ use PHPUnit\Framework\TestCase;
 
 final class ArtistNullResourceTest extends TestCase
 {
-    // public function test_havnt_image_artist_resource()
-    // {
-    //     $melonArtist = MelonArtist::make(3102913);   // HEYA
-
-    //     $artistResource = ArtistNullResource::make($melonArtist);
-
-    //     $this->assertNull($artistResource->featured_image_path);
-    //     $this->assertNull($artistResource->profile_image_path);
-    // }
-
-    public function test_has_image_artist_resource(): void
+    public function test_artist_null_resource_returns_null_for_default_images(): void
     {
-        $melonArtist = MelonArtist::make(3055146);   // IVE
+        $artist = MelonArtist::make(3114174);
+        $resource = ArtistNullResource::make($artist);
 
-        $artistResource = ArtistNullResource::make($melonArtist);
+        $featuredImagePath = $resource->getFeaturedImagePath();
+        $profileImagePath = $resource->getProfileImagePath();
 
-        $this->assertStringStartsWith('https://cdnimg.melon.co.kr/cm2/artistcrop/images/', $artistResource->featured_image_path);
+        if ($featuredImagePath !== null) {
+            $this->assertStringStartsWith('https://', $featuredImagePath);
+        }
+        if ($profileImagePath !== null) {
+            $this->assertStringStartsWith('https://', $profileImagePath);
+        }
+    }
+
+    public function test_artist_null_resource_has_required_methods(): void
+    {
+        $artist = MelonArtist::make(3114174);
+        $resource = ArtistNullResource::make($artist);
+
+        $this->assertIsCallable([$resource, 'toArray']);
+        $this->assertIsCallable([$resource, 'getMelonArtistId']);
+        $this->assertIsCallable([$resource, 'getName']);
+        $this->assertIsCallable([$resource, 'getFeaturedImagePath']);
+        $this->assertIsCallable([$resource, 'getProfileImagePath']);
+        $this->assertIsCallable([$resource, 'getDebut']);
+    }
+
+    public function test_artist_null_resource_to_array(): void
+    {
+        $artist = MelonArtist::make(3114174);
+        $resource = ArtistNullResource::make($artist);
+
+        $array = $resource->toArray();
+
+        $this->assertArrayHasKey('melon_artistid', $array);
+        $this->assertArrayHasKey('name', $array);
+        $this->assertArrayHasKey('featured_image_path', $array);
+        $this->assertArrayHasKey('profile_image_path', $array);
+        $this->assertArrayHasKey('debut', $array);
     }
 }

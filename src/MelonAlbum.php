@@ -2,15 +2,22 @@
 
 namespace Cable8mm\WaterMelon;
 
+use Cable8mm\WaterMelon\Contracts\AlbumInterface;
+use Cable8mm\WaterMelon\Exceptions\MelonApiException;
+use Cable8mm\WaterMelon\Resources\AlbumNullResource;
+use GuzzleHttp\Exception\RequestException;
+
 /**
  * Fetches information about a album from the melon.com API.
  *
  * @since  2023-03-20
  */
-class MelonAlbum extends Melon
+class MelonAlbum extends Melon implements AlbumInterface
 {
     /**
      * {@inheritDoc}
+     *
+     * @throws MelonApiException
      */
     public function parse(): array
     {
@@ -20,12 +27,59 @@ class MelonAlbum extends Melon
 
         $url = "https://m2.melon.com/m6/v2/album/info.json?albumId={$this->id}";
 
-        $client = new \GuzzleHttp\Client();
+        try {
+            $response = $this->client->request('GET', $url);
+            $body = $response->getBody()->getContents();
 
-        $response = $client->request('GET', $url);
+            if (empty($body)) {
+                throw MelonApiException::emptyResponse($url);
+            }
 
-        $json = json_decode($response->getBody()->getContents(), true);
+            $json = json_decode($body, true);
 
-        return $this->response = $json['response'];
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw MelonApiException::jsonParseError($url, json_last_error_msg());
+            }
+
+            if (! isset($json['response'])) {
+                throw MelonApiException::invalidResponse('response');
+            }
+
+            return $this->response = $json['response'];
+        } catch (RequestException $e) {
+            throw MelonApiException::requestFailed($url, $e->getMessage());
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTitle(): string
+    {
+        return $this->response['ALBUMINFO']['ALBUMNAME'] ?? '';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlbumCoverPath(): ?string
+    {
+        return AlbumNullResource::emptyToNull($this->response['ALBUMINFO']['ALBUMIMG'] ?? null);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReleasedAt(): ?string
+    {
+        return $this->response['ALBUMINFO']['ISSUEDATE'] ?? null;
     }
 }
