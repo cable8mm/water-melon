@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Melon.com Album API
+  version: 1.0.0
+  description: API specification for melon.com album information endpoint
+
+servers:
+  - url: https://m2.melon.com
+    description: Melon mobile API server
+
+paths:
+  /m6/v2/album/info.json:
+    get:
+      summary: Get album information
+      description: Retrieve detailed information about an album by its ID
+      operationId: getAlbumInfo
+      parameters:
+        - name: albumId
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Melon album ID
+          example: 11127145
+      responses:
+        "200":
+          description: Successful response with album information
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response
+                properties:
+                  response:
+                    type: object
+                    required:
+                      - ALBUMINFO
+                    properties:
+                      ALBUMINFO:
+                        type: object
+                        required:
+                          - ALBUMID
+                          - ALBUMNAME
+                          - ALBUMIMG
+                          - ISSUEDATE
+                        properties:
+                          ALBUMID:
+                            type: integer
+                            description: Album ID
+                            example: 11127145
+                          ALBUMNAME:
+                            type: string
+                            description: Album title
+                            example: "NewJeans 'OMG'"
+                          ALBUMIMG:
+                            type: string
+                            format: uri
+                            description: Album cover image URL
+                            example: "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20231213133532_500.jpg"
+                          ISSUEDATE:
+                            type: string
+                            format: date
+                            description: Release date
+                            example: "2023.01.02"
+                          ARTISTLIST:
+                            type: array
+                            description: List of artists in the album
+                            items:
+                              type: object
+                              properties:
+                                ARTISTID:
+                                  type: integer
+                                ARTISTNAME:
+                                  type: string
+        "400":
+          description: Bad request - invalid album ID
+        "404":
+          description: Album not found
+        "500":
+          description: Internal server error
+        "503":
+          description: Service unavailable
+
+components:
+  schemas:
+    AlbumInfo:
+      type: object
+      required:
+        - ALBUMID
+        - ALBUMNAME
+        - ALBUMIMG
+        - ISSUEDATE
+      properties:
+        ALBUMID:
+          type: integer
+        ALBUMNAME:
+          type: string
+        ALBUMIMG:
+          type: string
+          format: uri
+        ISSUEDATE:
+          type: string
+          format: date
+        ARTISTLIST:
+          type: array
+          items:
+            type: object
+            properties:
+              ARTISTID:
+                type: integer
+              ARTISTNAME:
+                type: string

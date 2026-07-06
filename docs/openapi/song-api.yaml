@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: Melon.com Song API
+  version: 1.0.0
+  description: API specification for melon.com song information endpoint
+
+servers:
+  - url: https://m2.melon.com
+    description: Melon mobile API server
+
+paths:
+  /m6/v3/song/info.json:
+    get:
+      summary: Get song information
+      description: Retrieve detailed information about a song by its ID
+      operationId: getSongInfo
+      parameters:
+        - name: songId
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Melon song ID
+          example: 35945927
+      responses:
+        "200":
+          description: Successful response with song information
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response
+                properties:
+                  response:
+                    type: object
+                    required:
+                      - SONGINFO
+                    properties:
+                      SONGINFO:
+                        type: object
+                        required:
+                          - SONGID
+                          - SONGNAME
+                          - ALBUMID
+                          - ALBUMIMG
+                          - ARTISTLIST
+                        properties:
+                          SONGID:
+                            type: integer
+                            description: Song ID
+                            example: 35945927
+                          SONGNAME:
+                            type: string
+                            description: Song title
+                            example: "Ditto"
+                          ALBUMID:
+                            type: integer
+                            description: Album ID
+                            example: 11127145
+                          ALBUMIMG:
+                            type: string
+                            format: uri
+                            description: Album image URL
+                            example: "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20231213133532_500.jpg"
+                          ARTISTLIST:
+                            type: array
+                            description: List of artists
+                            items:
+                              type: object
+                              required:
+                                - ARTISTID
+                                - ARTISTNAME
+                              properties:
+                                ARTISTID:
+                                  type: integer
+                                  description: Artist ID
+                                  example: 3114174
+                                ARTISTNAME:
+                                  type: string
+                                  description: Artist name
+                                  example: "NewJeans"
+        "400":
+          description: Bad request - invalid song ID
+        "404":
+          description: Song not found
+        "500":
+          description: Internal server error
+        "503":
+          description: Service unavailable
+
+components:
+  schemas:
+    SongInfo:
+      type: object
+      required:
+        - SONGID
+        - SONGNAME
+        - ALBUMID
+        - ALBUMIMG
+        - ARTISTLIST
+      properties:
+        SONGID:
+          type: integer
+        SONGNAME:
+          type: string
+        ALBUMID:
+          type: integer
+        ALBUMIMG:
+          type: string
+          format: uri
+        ARTISTLIST:
+          type: array
+          items:
+            $ref: "#/components/schemas/Artist"
+
+    Artist:
+      type: object
+      required:
+        - ARTISTID
+        - ARTISTNAME
+      properties:
+        ARTISTID:
+          type: integer
+        ARTISTNAME:
+          type: string
+
+  errorCodes:
+    INVALID_SONG_ID:
+      type: string
+      description: Invalid song ID provided
+    SONG_NOT_FOUND:
+      type: string
+      description: Song not found in database
