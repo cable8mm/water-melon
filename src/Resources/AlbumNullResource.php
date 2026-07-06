@@ -2,6 +2,7 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+use Cable8mm\WaterMelon\Contracts\AlbumResourceInterface;
 use Cable8mm\WaterMelon\MelonAlbum;
 
 /**
@@ -9,7 +10,7 @@ use Cable8mm\WaterMelon\MelonAlbum;
  *
  * @since  2023-03-20
  */
-class AlbumNullResource extends Resource
+class AlbumNullResource extends Resource implements AlbumResourceInterface
 {
     /**
      * {@inheritDoc}
@@ -24,6 +25,38 @@ class AlbumNullResource extends Resource
             'album_cover_path' => self::emptyToNull($this->melon['ALBUMINFO']['ALBUMIMG']),
             'released_at' => $this->melon['ALBUMINFO']['ISSUEDATE'],
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMelonAlbumId(): int
+    {
+        return $this->melon['ALBUMINFO']['ALBUMID'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTitle(): string
+    {
+        return $this->melon['ALBUMINFO']['ALBUMNAME'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlbumCoverPath(): ?string
+    {
+        return self::emptyToNull($this->melon['ALBUMINFO']['ALBUMIMG']);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReleasedAt(): ?string
+    {
+        return $this->melon['ALBUMINFO']['ISSUEDATE'];
     }
 
     /**
