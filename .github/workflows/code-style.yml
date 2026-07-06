@@ -11,17 +11,17 @@ jobs:
     name: Pint
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 2
 
       - name: "laravel-pint"
-        uses: aglipanci/laravel-pint-action@0.1.0
+        uses: aglipanci/laravel-pint-action@v2
         with:
           preset: laravel
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Linting
           skip_fetch: true
