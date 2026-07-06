@@ -3,6 +3,7 @@
 namespace Cable8mm\WaterMelon;
 
 use ArrayAccess;
+use GuzzleHttp\Client;
 
 /**
  * Abstract class for WaterMelon classes.
@@ -13,6 +14,9 @@ abstract class Melon implements ArrayAccess
 {
     /** @var int Song or album or artist Melon ID. */
     public int $id;
+
+    /** @var Client HTTP client. */
+    protected Client $client;
 
     /** @var array ArrayAccess container. */
     protected array $response = [];
@@ -28,11 +32,18 @@ abstract class Melon implements ArrayAccess
      * Class constructor.
      *
      * @param  int  $id  The id of the class
+     * @param  Client|null  $client  HTTP client instance
      * @param  bool  $autoParse  Automatically parse the response
      */
-    public function __construct(int $id, $autoParse = true)
+    public function __construct(int $id, ?Client $client = null, bool $autoParse = true)
     {
         $this->id = $id;
+        $this->client = $client ?? new Client([
+            'timeout' => 10,
+            'headers' => [
+                'User-Agent' => 'WaterMelon/1.0',
+            ],
+        ]);
 
         if ($autoParse) {
             $this->parse();
@@ -79,10 +90,11 @@ abstract class Melon implements ArrayAccess
      * Class factory to make Melon instance.
      *
      * @param  int  $id  The id of the class
+     * @param  Client|null  $client  HTTP client instance
      * @param  bool  $autoParse  Automatically parse the response
      */
-    public static function make(int $id, $autoParse = true): static
+    public static function make(int $id, ?Client $client = null, bool $autoParse = true): static
     {
-        return new static($id, $autoParse);
+        return new static($id, $client, $autoParse);
     }
 }

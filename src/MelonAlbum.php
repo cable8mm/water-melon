@@ -20,9 +20,7 @@ class MelonAlbum extends Melon
 
         $url = "https://m2.melon.com/m6/v2/album/info.json?albumId={$this->id}";
 
-        $client = new \GuzzleHttp\Client();
-
-        $response = $client->request('GET', $url);
+        $response = $this->client->request('GET', $url);
 
         $json = json_decode($response->getBody()->getContents(), true);
 
