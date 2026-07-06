@@ -37,13 +37,12 @@ class ArtistResource extends Resource
      * Create a new ArtistResource instance.
      *
      * @example $artist = ArtistResource::make($waterMelon->getArtists()[0]);
-     * print $song->title;
-     * print $song->title;
-     * //=> Ditto
-     * print $song->album_id;
-     * //=> 11127145
-     * print $song->artwork_image_path;
-     * //=> https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20231213133532_500.jpg?42f8389c13de0f5f8e4c722bbb0d4bd7/melon/resize/144/optimize/90
+     * print $artist->name;
+     * //=> NewJeans
+     * print $artist->melon_artistid;
+     * //=> 3114174
+     * print $artist->featured_image_path;
+     * //=> https://cdnimg.melon.co.kr/cm2/artistcrop/images/031/14/174/3114174_20231219153524_500.jpg?8d4887c3dea0a5262fe256c1aef2a9d2/melon/resize/100/optimize/90
      */
     public static function make(MelonArtist $melonArtist): static
     {
