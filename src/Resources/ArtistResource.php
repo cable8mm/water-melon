@@ -2,6 +2,7 @@
 
 namespace Cable8mm\WaterMelon\Resources;
 
+use Cable8mm\WaterMelon\Contracts\ArtistResourceInterface;
 use Cable8mm\WaterMelon\MelonArtist;
 
 /**
@@ -9,7 +10,7 @@ use Cable8mm\WaterMelon\MelonArtist;
  *
  * @since  2023-03-20
  */
-class ArtistResource extends Resource
+class ArtistResource extends Resource implements ArtistResourceInterface
 {
     /**
      * {@inheritDoc}
@@ -31,6 +32,46 @@ class ArtistResource extends Resource
             'agency' => null,
             'genre' => null,
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMelonArtistId(): int
+    {
+        return $this->melon['ARTISTID'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName(): string
+    {
+        return $this->melon['ARTISTNAME'];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFeaturedImagePath(): ?string
+    {
+        return self::emptyToNull($this->melon['ARTISTIMGLARGE']);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProfileImagePath(): ?string
+    {
+        return self::emptyToNull($this->melon['POSTIMG']);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDebut(): ?string
+    {
+        return $this->melon['ARTISTNOTEINFO']['ISSUEDATE'] ?? null;
     }
 
     /**

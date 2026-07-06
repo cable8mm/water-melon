@@ -2,7 +2,9 @@
 
 namespace Cable8mm\WaterMelon;
 
+use Cable8mm\WaterMelon\Contracts\AlbumInterface;
 use Cable8mm\WaterMelon\Exceptions\MelonApiException;
+use Cable8mm\WaterMelon\Resources\AlbumNullResource;
 use GuzzleHttp\Exception\RequestException;
 
 /**
@@ -10,7 +12,7 @@ use GuzzleHttp\Exception\RequestException;
  *
  * @since  2023-03-20
  */
-class MelonAlbum extends Melon
+class MelonAlbum extends Melon implements AlbumInterface
 {
     /**
      * {@inheritDoc}
@@ -47,5 +49,37 @@ class MelonAlbum extends Melon
         } catch (RequestException $e) {
             throw MelonApiException::requestFailed($url, $e->getMessage());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTitle(): string
+    {
+        return $this->response['ALBUMINFO']['ALBUMNAME'] ?? '';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlbumCoverPath(): ?string
+    {
+        return AlbumNullResource::emptyToNull($this->response['ALBUMINFO']['ALBUMIMG'] ?? null);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getReleasedAt(): ?string
+    {
+        return $this->response['ALBUMINFO']['ISSUEDATE'] ?? null;
     }
 }

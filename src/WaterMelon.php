@@ -2,7 +2,10 @@
 
 namespace Cable8mm\WaterMelon;
 
-use Cable8mm\WaterMelon\Traits\Makeable;
+use Cable8mm\WaterMelon\Contracts\AlbumInterface;
+use Cable8mm\WaterMelon\Contracts\ArtistInterface;
+use Cable8mm\WaterMelon\Contracts\SongInterface;
+use GuzzleHttp\Client;
 
 /**
  * Fetch all information about a song, song's albums and song's artists from the melon.com API.
@@ -13,37 +16,48 @@ use Cable8mm\WaterMelon\Traits\Makeable;
  */
 class WaterMelon
 {
-    use Makeable;
+    /** @var SongInterface Melon song. */
+    public SongInterface $song;
 
-    /** @var int Melon song ID. */
-    private int $songid;
+    /** @var AlbumInterface Melon album. */
+    public AlbumInterface $album;
 
-    /** @var MelonSong Melon song. */
-    public MelonSong $song;
-
-    /** $var MelonAlbum $album Melon album.
-     */
-    public MelonAlbum $album;
-
-    /** @var Melon[] Melon artists. */
+    /** @var ArtistInterface[] Melon artists. */
     public array $artists = [];
 
     /**
      * Constructor.
      *
-     * @param  int  $songid  Melon song ID.
+     * @param  SongInterface  $song  Melon song.
+     * @param  AlbumInterface  $album  Melon album.
+     * @param  ArtistInterface[]  $artists  Melon artists.
      */
-    public function __construct(int $songid)
+    public function __construct(
+        SongInterface $song,
+        AlbumInterface $album,
+        array $artists = []
+    ) {
+        $this->song = $song;
+        $this->album = $album;
+        $this->artists = $artists;
+    }
+
+    /**
+     * Create a new WaterMelon instance from a song ID.
+     *
+     * @param  int  $songId  Melon song ID
+     * @param  Client|null  $client  HTTP client instance
+     */
+    public static function make(int $songId, ?Client $client = null): static
     {
-        $this->songid = $songid;
-
-        $this->song = MelonSong::make($this->songid);
-
-        $this->album = MelonAlbum::make($this->song['SONGINFO']['ALBUMID']);
-
-        foreach ($this->song['SONGINFO']['ARTISTLIST'] as $artist) {
-            $this->artists[] = MelonArtist::make($artist['ARTISTID']);
+        $song = MelonSong::make($songId, $client);
+        $album = MelonAlbum::make($song->getAlbumId(), $client);
+        $artists = [];
+        foreach ($song->parse()['SONGINFO']['ARTISTLIST'] as $artistData) {
+            $artists[] = MelonArtist::make($artistData['ARTISTID'], $client);
         }
+
+        return new static($song, $album, $artists);
     }
 
     /**
@@ -53,7 +67,6 @@ class WaterMelon
     {
         $this->album->parse();
 
-        /** @var $artist MelonArtist */
         foreach ($this->artists as $artist) {
             $artist->parse();
         }
@@ -66,7 +79,7 @@ class WaterMelon
      *
      * @example WaterMelon::make(35945927)->getSong();
      */
-    public function getSong(): MelonSong
+    public function getSong(): SongInterface
     {
         return $this->song;
     }
@@ -76,7 +89,7 @@ class WaterMelon
      *
      * @example WaterMelon::make(35945927)->getAlbum();
      */
-    public function getAlbum(): MelonAlbum
+    public function getAlbum(): AlbumInterface
     {
         return $this->album;
     }
@@ -84,9 +97,9 @@ class WaterMelon
     /**
      * Getter to get a information about artists.
      *
-     * @return MelonArtist[]
+     * @return ArtistInterface[]
      *
-     * @example WaterMelon::make(35945927)->getSong();
+     * @example WaterMelon::make(35945927)->getArtists();
      */
     public function getArtists(): array
     {
