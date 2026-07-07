@@ -17,6 +17,8 @@ use PHPUnit\Framework\TestCase;
  * This ensures that the API contract is maintained and any breaking changes are caught early.
  *
  * @since  2024-01-15
+ *
+ * @group online
  */
 final class OpenApiContractTest extends TestCase
 {

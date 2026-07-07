@@ -1,49 +1,50 @@
 {
-    "name": "cable8mm/water-melon",
-    "description": "Water Melon is simple melon.com api sdk for php",
-    "keywords": [
-        "phpunit",
-        "php",
-        "development",
-        "crawler",
-        "melon"
-    ],
-    "type": "project",
-    "require": {
-        "php": "^8.0",
-        "guzzlehttp/guzzle": "^7.5"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.0|^10.0|^11.0",
-        "laravel/pint": "^1.0"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sam Lee",
-            "email": "cable8mm@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "autoload": {
-        "classmap": [
-            "src/"
-        ],
-        "psr-4": {
-            "Cable8mm\\WaterMelon\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Cable8mm\\WaterMelon\\Tests\\": "tests/"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "test": "./vendor/bin/phpunit tests",
-        "lint": "./vendor/bin/pint",
-        "inspect": "./vendor/bin/pint --test",
-        "apidoc": "doctum.phar update doctum.php --output-format=github --no-ansi --no-progress"
+  "name": "cable8mm/water-melon",
+  "description": "Water Melon is simple melon.com api sdk for php",
+  "keywords": [
+    "phpunit",
+    "php",
+    "development",
+    "crawler",
+    "melon"
+  ],
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0|^10.0|^11.0",
+    "laravel/pint": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sam Lee",
+      "email": "cable8mm@gmail.com",
+      "role": "Developer"
     }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {
+      "Cable8mm\\WaterMelon\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cable8mm\\WaterMelon\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "test": "./vendor/bin/phpunit tests",
+    "test:offline": "./vendor/bin/phpunit --configuration phpunit.offline.xml.dist",
+    "lint": "./vendor/bin/pint",
+    "inspect": "./vendor/bin/pint --test",
+    "apidoc": "doctum.phar update doctum.php --output-format=github --no-ansi --no-progress"
+  }
 }

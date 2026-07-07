@@ -5,6 +5,9 @@ namespace Cable8mm\WaterMelon\Tests;
 use Cable8mm\WaterMelon\WaterMelon;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class WaterMelonTest extends TestCase
 {
     public function test_get_song_id(): void

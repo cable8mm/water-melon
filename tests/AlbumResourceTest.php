@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\Resources\AlbumResource;
 use Cable8mm\WaterMelon\WaterMelon;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class AlbumResourceTest extends TestCase
 {
     public function test_album_resource(): void

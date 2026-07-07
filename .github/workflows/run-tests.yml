@@ -7,7 +7,7 @@ on:
       - "dependabot/npm_and_yarn/*"
 
 jobs:
-  test:
+  test-offline:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-latest]
         php: [8.1, 8.2, 8.3, 8.4, 8.5]
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} (Offline)
 
     steps:
       - name: Checkout code
@@ -34,5 +34,37 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Execute tests
-        run: composer test
+      - name: Execute offline tests (no network required)
+        run: composer test:offline
+
+  test-online:
+    runs-on: ubuntu-latest
+    needs: test-offline
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.4]
+
+    name: PHP ${{ matrix.php }} (Online - API Contract)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Execute online tests (API contract tests)
+        run: composer test:offline
