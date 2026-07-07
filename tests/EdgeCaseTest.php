@@ -10,6 +10,9 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class EdgeCaseTest extends TestCase
 {
     public function test_empty_response_throws_exception(): void

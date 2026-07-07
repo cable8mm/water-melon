@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\Exceptions\MelonApiException;
 use Cable8mm\WaterMelon\MelonSong;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class ExceptionTest extends TestCase
 {
     public function test_song_exception_has_correct_message(): void

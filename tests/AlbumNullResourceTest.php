@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\MelonAlbum;
 use Cable8mm\WaterMelon\Resources\AlbumNullResource;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class AlbumNullResourceTest extends TestCase
 {
     public function test_album_null_resource_returns_null_for_default_image(): void

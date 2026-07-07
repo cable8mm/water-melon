@@ -7,6 +7,9 @@ use Cable8mm\WaterMelon\MelonArtist;
 use Cable8mm\WaterMelon\MelonSong;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class ArrayAccessTest extends TestCase
 {
     public function test_song_array_access_get(): void

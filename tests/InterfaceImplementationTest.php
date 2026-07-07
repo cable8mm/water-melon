@@ -16,6 +16,9 @@ use Cable8mm\WaterMelon\Resources\ArtistResource;
 use Cable8mm\WaterMelon\Resources\SongResource;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class InterfaceImplementationTest extends TestCase
 {
     public function test_melon_song_implements_song_interface(): void

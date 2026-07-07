@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\MelonArtist;
 use Cable8mm\WaterMelon\Resources\ArtistNullResource;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class ArtistNullResourceTest extends TestCase
 {
     public function test_artist_null_resource_returns_null_for_default_images(): void

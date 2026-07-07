@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\Resources\ArtistResource;
 use Cable8mm\WaterMelon\WaterMelon;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class ArtistResourceTest extends TestCase
 {
     public function test_artist_resource(): void

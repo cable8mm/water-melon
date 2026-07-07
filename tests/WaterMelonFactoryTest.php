@@ -9,6 +9,9 @@ use Cable8mm\WaterMelon\WaterMelonFactory;
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class WaterMelonFactoryTest extends TestCase
 {
     public function test_create_watermelon_from_song_id(): void

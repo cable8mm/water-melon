@@ -6,6 +6,9 @@ use Cable8mm\WaterMelon\MelonSong;
 use Cable8mm\WaterMelon\Resources\SongNullResource;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @group online
+ */
 final class SongNullResourceTest extends TestCase
 {
     public function test_song_null_resource_returns_null_for_default_image(): void
