@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.2.0 - 2026-07-07
+
+### What's Changed
+
+* feat: improvements by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/11
+* test: offline available for ci by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/12
+
+**Full Changelog**: https://github.com/cable8mm/water-melon/compare/v1.1.3...v1.2.0
+
 ## v1.1.3 - 2024-03-09
 
 ### What's Changed
