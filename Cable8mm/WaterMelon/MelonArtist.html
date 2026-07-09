@@ -88,9 +88,10 @@
         <br>
     
     <p>        class
-    <strong>MelonArtist</strong>        extends <a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>
+    <strong>MelonArtist</strong>        extends <a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>        implements        <a href="../../Cable8mm/WaterMelon/Contracts/ArtistInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\ArtistInterface">ArtistInterface</abbr></a>
 </p>
 
+        
         
     
         
@@ -111,6 +112,16 @@
                 <td>$id</td>
                 <td class="last"></td>
                 <td><small>from&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html#property_id">
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_client">
+                                        protected                                        <abbr title="GuzzleHttp\Client">Client</abbr>
+                                                                                
+                                    </td>
+                <td>$client</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html#property_client">
 <abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a></small></td>
             </tr>
                     <tr>
@@ -144,7 +155,7 @@
                     
                 </div>
                 <div class="col-md-8">
-                    <a href="#method___construct">__construct</a>(int $id, bool $autoParse = true)
+                    <a href="#method___construct">__construct</a>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         
                                             <p><p>Class constructor.</p></p>                </div>
                 <div class="col-md-2"><small>from&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html#method___construct">
@@ -199,11 +210,91 @@
                     static&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_make">make</a>(int $id, bool $autoParse = true)
+                    <a href="#method_make">make</a>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         
                                             <p><p>Class factory to make Melon instance.</p></p>                </div>
                 <div class="col-md-2"><small>from&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html#method_make">
 <abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getId">getId</a>()
+        
+                                            <p><p>Get the artist ID.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getName">getName</a>()
+        
+                                            <p><p>Get the artist name.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getFeaturedImagePath">getFeaturedImagePath</a>()
+        
+                                            <p><p>Get the featured image path.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getProfileImagePath">getProfileImagePath</a>()
+        
+                                            <p><p>Get the profile image path.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getBirth">getBirth</a>()
+        
+                                            <p><p>Get the birth date.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getDebut">getDebut</a>()
+        
+                                            <p><p>Get the debut date.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getAgency">getAgency</a>()
+        
+                                            <p><p>Get the agency.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getGenre">getGenre</a>()
+        
+                                            <p><p>Get the genre.</p></p>                </div>
+                <div class="col-md-2"></div>
             </div>
             </div>
 
@@ -213,12 +304,13 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_parse">
-        <div class="location">at line 15</div>
+        <div class="location">at line 22</div>
         <code>                    array
     <strong>parse</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -246,12 +338,13 @@
                     <div class="method-item">
                     <h3 id="method___construct">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method___construct">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 33</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 38</div>
         <code>                    
-    <strong>__construct</strong>(int $id, bool $autoParse = true)
+    <strong>__construct</strong>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -266,6 +359,11 @@
                 <td>int</td>
                 <td>$id</td>
                 <td><p>The id of the class</p></td>
+            </tr>
+                    <tr>
+                <td><abbr title="GuzzleHttp\Client">Client</abbr>|null</td>
+                <td>$client</td>
+                <td><p>HTTP client instance</p></td>
             </tr>
                     <tr>
                 <td>bool</td>
@@ -285,12 +383,13 @@
                     <div class="method-item">
                     <h3 id="method_offsetSet">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method_offsetSet">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 45</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 56</div>
         <code>                    void
     <strong>offsetSet</strong>(mixed $offset, mixed $value)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -333,12 +432,13 @@
                     <div class="method-item">
                     <h3 id="method_offsetExists">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method_offsetExists">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 57</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 68</div>
         <code>                    bool
     <strong>offsetExists</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -376,12 +476,13 @@
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method_offsetUnset">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 65</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 76</div>
         <code>                    void
     <strong>offsetUnset</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -419,12 +520,13 @@
                     <div class="method-item">
                     <h3 id="method_offsetGet">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method_offsetGet">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 73</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 84</div>
         <code>                    mixed
     <strong>offsetGet</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -462,12 +564,13 @@
                     <div class="method-item">
                     <h3 id="method_make">
         <div class="location">in <a href="../../Cable8mm/WaterMelon/Melon.html#method_make">
-<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 84</div>
+<abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a> at line 96</div>
         <code>        static            <a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>
-    <strong>make</strong>(int $id, bool $autoParse = true)
+    <strong>make</strong>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -484,6 +587,11 @@
                 <td><p>The id of the class</p></td>
             </tr>
                     <tr>
+                <td><abbr title="GuzzleHttp\Client">Client</abbr>|null</td>
+                <td>$client</td>
+                <td><p>HTTP client instance</p></td>
+            </tr>
+                    <tr>
                 <td>bool</td>
                 <td>$autoParse</td>
                 <td><p>Automatically parse the response</p></td>
@@ -496,6 +604,270 @@
                     <table class="table table-condensed">
         <tr>
             <td><a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getId">
+        <div class="location">at line 57</div>
+        <code>                    int
+    <strong>getId</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the artist ID.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getName">
+        <div class="location">at line 65</div>
+        <code>                    string
+    <strong>getName</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the artist name.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFeaturedImagePath">
+        <div class="location">at line 73</div>
+        <code>                    string|null
+    <strong>getFeaturedImagePath</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the featured image path.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getProfileImagePath">
+        <div class="location">at line 81</div>
+        <code>                    string|null
+    <strong>getProfileImagePath</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the profile image path.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getBirth">
+        <div class="location">at line 89</div>
+        <code>                    string|null
+    <strong>getBirth</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the birth date.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDebut">
+        <div class="location">at line 97</div>
+        <code>                    string|null
+    <strong>getDebut</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the debut date.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAgency">
+        <div class="location">at line 105</div>
+        <code>                    string|null
+    <strong>getAgency</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the agency.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getGenre">
+        <div class="location">at line 113</div>
+        <code>                    string|null
+    <strong>getGenre</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Get the genre.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
             <td></td>
         </tr>
     </table>

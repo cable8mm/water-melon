@@ -1,5 +1,5 @@
 var Doctum = {
-    treeJson: {"tree":{"l":0,"n":"","p":"","c":[{"l":1,"n":"Cable8mm","p":"Cable8mm","c":[{"l":2,"n":"WaterMelon","p":"Cable8mm/WaterMelon","c":[{"l":3,"n":"Resources","p":"Cable8mm/WaterMelon/Resources","c":[{"l":4,"n":"AlbumNullResource","p":"Cable8mm/WaterMelon/Resources/AlbumNullResource"},{"l":4,"n":"AlbumResource","p":"Cable8mm/WaterMelon/Resources/AlbumResource"},{"l":4,"n":"ArtistNullResource","p":"Cable8mm/WaterMelon/Resources/ArtistNullResource"},{"l":4,"n":"ArtistResource","p":"Cable8mm/WaterMelon/Resources/ArtistResource"},{"l":4,"n":"Resource","p":"Cable8mm/WaterMelon/Resources/Resource"},{"l":4,"n":"SongNullResource","p":"Cable8mm/WaterMelon/Resources/SongNullResource"},{"l":4,"n":"SongResource","p":"Cable8mm/WaterMelon/Resources/SongResource"}]},{"l":3,"n":"Traits","p":"Cable8mm/WaterMelon/Traits","c":[{"l":4,"n":"Makeable","p":"Cable8mm/WaterMelon/Traits/Makeable"}]},{"l":3,"n":"Melon","p":"Cable8mm/WaterMelon/Melon"},{"l":3,"n":"MelonAlbum","p":"Cable8mm/WaterMelon/MelonAlbum"},{"l":3,"n":"MelonArtist","p":"Cable8mm/WaterMelon/MelonArtist"},{"l":3,"n":"MelonSong","p":"Cable8mm/WaterMelon/MelonSong"},{"l":3,"n":"WaterMelon","p":"Cable8mm/WaterMelon/WaterMelon"}]}]}]},"treeOpenLevel":2},
+    treeJson: {"tree":{"l":0,"n":"","p":"","c":[{"l":1,"n":"Cable8mm","p":"Cable8mm","c":[{"l":2,"n":"WaterMelon","p":"Cable8mm/WaterMelon","c":[{"l":3,"n":"Contracts","p":"Cable8mm/WaterMelon/Contracts","c":[{"l":4,"n":"AlbumInterface","p":"Cable8mm/WaterMelon/Contracts/AlbumInterface"},{"l":4,"n":"AlbumResourceInterface","p":"Cable8mm/WaterMelon/Contracts/AlbumResourceInterface"},{"l":4,"n":"ArtistInterface","p":"Cable8mm/WaterMelon/Contracts/ArtistInterface"},{"l":4,"n":"ArtistResourceInterface","p":"Cable8mm/WaterMelon/Contracts/ArtistResourceInterface"},{"l":4,"n":"SongInterface","p":"Cable8mm/WaterMelon/Contracts/SongInterface"},{"l":4,"n":"SongResourceInterface","p":"Cable8mm/WaterMelon/Contracts/SongResourceInterface"}]},{"l":3,"n":"Exceptions","p":"Cable8mm/WaterMelon/Exceptions","c":[{"l":4,"n":"MelonApiException","p":"Cable8mm/WaterMelon/Exceptions/MelonApiException"}]},{"l":3,"n":"Resources","p":"Cable8mm/WaterMelon/Resources","c":[{"l":4,"n":"AlbumNullResource","p":"Cable8mm/WaterMelon/Resources/AlbumNullResource"},{"l":4,"n":"AlbumResource","p":"Cable8mm/WaterMelon/Resources/AlbumResource"},{"l":4,"n":"ArtistNullResource","p":"Cable8mm/WaterMelon/Resources/ArtistNullResource"},{"l":4,"n":"ArtistResource","p":"Cable8mm/WaterMelon/Resources/ArtistResource"},{"l":4,"n":"Resource","p":"Cable8mm/WaterMelon/Resources/Resource"},{"l":4,"n":"SongNullResource","p":"Cable8mm/WaterMelon/Resources/SongNullResource"},{"l":4,"n":"SongResource","p":"Cable8mm/WaterMelon/Resources/SongResource"}]},{"l":3,"n":"Traits","p":"Cable8mm/WaterMelon/Traits","c":[{"l":4,"n":"Makeable","p":"Cable8mm/WaterMelon/Traits/Makeable"}]},{"l":3,"n":"Melon","p":"Cable8mm/WaterMelon/Melon"},{"l":3,"n":"MelonAlbum","p":"Cable8mm/WaterMelon/MelonAlbum"},{"l":3,"n":"MelonArtist","p":"Cable8mm/WaterMelon/MelonArtist"},{"l":3,"n":"MelonSong","p":"Cable8mm/WaterMelon/MelonSong"},{"l":3,"n":"WaterMelon","p":"Cable8mm/WaterMelon/WaterMelon"},{"l":3,"n":"WaterMelonFactory","p":"Cable8mm/WaterMelon/WaterMelonFactory"}]}]}]},"treeOpenLevel":2},
     /** @var boolean */
     treeLoaded: false,
     /** @var boolean */
@@ -261,10 +261,13 @@ var Doctum = {
     /**
      * Clean the search query
      *
-     * @param string query
+     * @param string|null query
      * @return string
      */
     cleanSearchQuery: function (query) {
+        if (typeof query !== 'string') {
+            return '';
+        }
         // replace any chars that could lead to injecting code in our regex
         // remove start or end spaces
         // replace backslashes by an escaped version, use case in search: \myRootFunction

@@ -92,30 +92,21 @@
 </p>
 
         
+        
     
         
 
             <div class="description">
             <p><p>Fetch all information about a song, song's albums and song's artists from the melon.com API.</p></p>                    </div>
             
-                <h2>Traits</h2>
-
         
-    <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-6">
-                    <a href="../../Cable8mm/WaterMelon/Traits/Makeable.html"><abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a>    </div>
-                <div class="col-md-6"><p>Factory class for creating traits.</p></div>
-            </div>
-            </div>
-    
     
             <h2>Properties</h2>
 
             <table class="table table-condensed">
                     <tr>
                 <td class="type" id="property_song">
-                                                                                <a href="../../Cable8mm/WaterMelon/MelonSong.html"><abbr title="Cable8mm\WaterMelon\MelonSong">MelonSong</abbr></a>
+                                                                                <a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a>
                                                                                 
                                     </td>
                 <td>$song</td>
@@ -124,16 +115,16 @@
             </tr>
                     <tr>
                 <td class="type" id="property_album">
-                                                                                
+                                                                                <a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a>
                                                                                 
                                     </td>
                 <td>$album</td>
-                <td class="last"><p>$var MelonAlbum $album Melon album.</p></td>
+                <td class="last"></td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type" id="property_artists">
-                                                                                <a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>[]
+                                                                                <a href="../../Cable8mm/WaterMelon/Contracts/ArtistInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\ArtistInterface">ArtistInterface</abbr></a>[]
                                                                                 
                                     </td>
                 <td>$artists</td>
@@ -148,23 +139,22 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../Cable8mm/WaterMelon/Traits/Makeable.html"><abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#method_make">make</a>(...$arguments)
-        
-                                            <p><p>Create a new instance.</p></p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../Cable8mm/WaterMelon/Traits/Makeable.html#method_make">
-<abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8">
-                    <a href="#method___construct">__construct</a>(int $songid)
+                    <a href="#method___construct">__construct</a>(<a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a> $song, <a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a> $album, array $artists = [])
         
                                             <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../Cable8mm/WaterMelon/WaterMelon.html"><abbr title="Cable8mm\WaterMelon\WaterMelon">WaterMelon</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_make">make</a>(int $songId, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null)
+        
+                                            <p><p>Create a new WaterMelon instance from a song ID.</p></p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -179,7 +169,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../Cable8mm/WaterMelon/MelonSong.html"><abbr title="Cable8mm\WaterMelon\MelonSong">MelonSong</abbr></a>
+                    <a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a>
                 </div>
                 <div class="col-md-8">
                     <a href="#method_getSong">getSong</a>()
@@ -189,7 +179,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../Cable8mm/WaterMelon/MelonAlbum.html"><abbr title="Cable8mm\WaterMelon\MelonAlbum">MelonAlbum</abbr></a>
+                    <a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a>
                 </div>
                 <div class="col-md-8">
                     <a href="#method_getAlbum">getAlbum</a>()
@@ -214,28 +204,77 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_make">
-        <div class="location">in <a href="../../Cable8mm/WaterMelon/Traits/Makeable.html#method_make">
-<abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a> at line 15</div>
-        <code>        static            <a href="../../Cable8mm/WaterMelon/Traits/Makeable.html"><abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a>
-    <strong>make</strong>(...$arguments)
+                    <h3 id="method___construct">
+        <div class="location">at line 35</div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a> $song, <a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a> $album, array $artists = [])
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
         <div class="method-description">
-                            <p><p>Create a new instance.</p></p>                        
+                            <p>Constructor.</p>                        
         </div>
         <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>...$arguments</td>
-                <td></td>
+                <td><a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a></td>
+                <td>$song</td>
+                <td><p>Melon song.</p></td>
+            </tr>
+                    <tr>
+                <td><a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a></td>
+                <td>$album</td>
+                <td><p>Melon album.</p></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$artists</td>
+                <td><p>Melon artists.</p></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_make">
+        <div class="location">at line 51</div>
+        <code>        static            <a href="../../Cable8mm/WaterMelon/WaterMelon.html"><abbr title="Cable8mm\WaterMelon\WaterMelon">WaterMelon</abbr></a>
+    <strong>make</strong>(int $songId, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Create a new WaterMelon instance from a song ID.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$songId</td>
+                <td><p>Melon song ID</p></td>
+            </tr>
+                    <tr>
+                <td><abbr title="GuzzleHttp\Client">Client</abbr>|null</td>
+                <td>$client</td>
+                <td><p>HTTP client instance</p></td>
             </tr>
             </table>
 
@@ -244,7 +283,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../Cable8mm/WaterMelon/Traits/Makeable.html"><abbr title="Cable8mm\WaterMelon\Traits\Makeable">Makeable</abbr></a></td>
+            <td><a href="../../Cable8mm/WaterMelon/WaterMelon.html"><abbr title="Cable8mm\WaterMelon\WaterMelon">WaterMelon</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -257,46 +296,14 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at line 36</div>
-        <code>                    
-    <strong>__construct</strong>(int $songid)
-        </code>
-    </h3>
-    <div class="details">    
-    
-            
-
-        <div class="method-description">
-                            <p>Constructor.</p>                        
-        </div>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>int</td>
-                <td>$songid</td>
-                <td><p>Melon song ID.</p></td>
-            </tr>
-            </table>
-
-            
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_parse">
-        <div class="location">at line 52</div>
+        <div class="location">at line 66</div>
         <code>                    <a href="../../Cable8mm/WaterMelon/WaterMelon.html"><abbr title="Cable8mm\WaterMelon\WaterMelon">WaterMelon</abbr></a>
     <strong>parse</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -323,12 +330,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSong">
-        <div class="location">at line 69</div>
-        <code>                    <a href="../../Cable8mm/WaterMelon/MelonSong.html"><abbr title="Cable8mm\WaterMelon\MelonSong">MelonSong</abbr></a>
+        <div class="location">at line 82</div>
+        <code>                    <a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a>
     <strong>getSong</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -341,7 +349,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../Cable8mm/WaterMelon/MelonSong.html"><abbr title="Cable8mm\WaterMelon\MelonSong">MelonSong</abbr></a></td>
+            <td><a href="../../Cable8mm/WaterMelon/Contracts/SongInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\SongInterface">SongInterface</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -363,12 +371,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAlbum">
-        <div class="location">at line 79</div>
-        <code>                    <a href="../../Cable8mm/WaterMelon/MelonAlbum.html"><abbr title="Cable8mm\WaterMelon\MelonAlbum">MelonAlbum</abbr></a>
+        <div class="location">at line 92</div>
+        <code>                    <a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a>
     <strong>getAlbum</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -381,7 +390,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../Cable8mm/WaterMelon/MelonAlbum.html"><abbr title="Cable8mm\WaterMelon\MelonAlbum">MelonAlbum</abbr></a></td>
+            <td><a href="../../Cable8mm/WaterMelon/Contracts/AlbumInterface.html"><abbr title="Cable8mm\WaterMelon\Contracts\AlbumInterface">AlbumInterface</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -403,12 +412,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getArtists">
-        <div class="location">at line 91</div>
+        <div class="location">at line 104</div>
         <code>                    array
     <strong>getArtists</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -433,7 +443,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><pre class="examples">WaterMelon::make(35945927)-&gt;getSong();</pre></td>
+                <td><pre class="examples">WaterMelon::make(35945927)-&gt;getArtists();</pre></td>
             </tr>
             </table>
 

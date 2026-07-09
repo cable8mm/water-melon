@@ -92,6 +92,7 @@
 </p>
 
         
+        
     
         
 
@@ -109,6 +110,15 @@
                                                                                 
                                     </td>
                 <td>$id</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_client">
+                                        protected                                        <abbr title="GuzzleHttp\Client">Client</abbr>
+                                                                                
+                                    </td>
+                <td>$client</td>
                 <td class="last"></td>
                 <td></td>
             </tr>
@@ -142,7 +152,7 @@
                     
                 </div>
                 <div class="col-md-8">
-                    <a href="#method___construct">__construct</a>(int $id, bool $autoParse = true)
+                    <a href="#method___construct">__construct</a>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         
                                             <p><p>Class constructor.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -192,7 +202,7 @@
                     static&nbsp;<a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_make">make</a>(int $id, bool $autoParse = true)
+                    <a href="#method_make">make</a>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         
                                             <p><p>Class factory to make Melon instance.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -205,12 +215,13 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_parse">
-        <div class="location">at line 25</div>
+        <div class="location">at line 29</div>
         <code>    abstract        protected        array
     <strong>parse</strong>()
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -237,12 +248,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 33</div>
+        <div class="location">at line 38</div>
         <code>                    
-    <strong>__construct</strong>(int $id, bool $autoParse = true)
+    <strong>__construct</strong>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -257,6 +269,11 @@
                 <td>int</td>
                 <td>$id</td>
                 <td><p>The id of the class</p></td>
+            </tr>
+                    <tr>
+                <td><abbr title="GuzzleHttp\Client">Client</abbr>|null</td>
+                <td>$client</td>
+                <td><p>HTTP client instance</p></td>
             </tr>
                     <tr>
                 <td>bool</td>
@@ -275,12 +292,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at line 45</div>
+        <div class="location">at line 56</div>
         <code>                    void
     <strong>offsetSet</strong>(mixed $offset, mixed $value)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -322,12 +340,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetExists">
-        <div class="location">at line 57</div>
+        <div class="location">at line 68</div>
         <code>                    bool
     <strong>offsetExists</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -364,12 +383,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at line 65</div>
+        <div class="location">at line 76</div>
         <code>                    void
     <strong>offsetUnset</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -406,12 +426,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetGet">
-        <div class="location">at line 73</div>
+        <div class="location">at line 84</div>
         <code>                    mixed
     <strong>offsetGet</strong>(mixed $offset)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -448,12 +469,13 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_make">
-        <div class="location">at line 84</div>
+        <div class="location">at line 96</div>
         <code>        static            <a href="../../Cable8mm/WaterMelon/Melon.html"><abbr title="Cable8mm\WaterMelon\Melon">Melon</abbr></a>
-    <strong>make</strong>(int $id, bool $autoParse = true)
+    <strong>make</strong>(int $id, <abbr title="GuzzleHttp\Client">Client</abbr>|null $client = null, bool $autoParse = true)
         </code>
     </h3>
     <div class="details">    
+            
     
             
 
@@ -468,6 +490,11 @@
                 <td>int</td>
                 <td>$id</td>
                 <td><p>The id of the class</p></td>
+            </tr>
+                    <tr>
+                <td><abbr title="GuzzleHttp\Client">Client</abbr>|null</td>
+                <td>$client</td>
+                <td><p>HTTP client instance</p></td>
             </tr>
                     <tr>
                 <td>bool</td>
