@@ -9,6 +9,8 @@ use Cable8mm\WaterMelon\MelonSong;
  * Song resource for mapping from melon.com.
  *
  * @since  2023-03-20
+ *
+ * @property MelonSong $melon
  */
 class SongResource extends Resource implements SongResourceInterface
 {
@@ -20,10 +22,10 @@ class SongResource extends Resource implements SongResourceInterface
     public function toArray(): array
     {
         return [
-            'album_id' => $this->melon['SONGINFO']['ALBUMID'],
-            'melon_songid' => $this->melon['SONGINFO']['SONGID'],
-            'title' => $this->melon['SONGINFO']['SONGNAME'],
-            'artwork_image_path' => $this->melon['SONGINFO']['ALBUMIMG'],
+            'album_id' => $this->melon->getAlbumId(),
+            'melon_songid' => $this->melon->getId(),
+            'title' => $this->melon->getTitle(),
+            'artwork_image_path' => $this->melon->getArtworkImagePath(),
         ];
     }
 
@@ -32,7 +34,7 @@ class SongResource extends Resource implements SongResourceInterface
      */
     public function getMelonSongId(): int
     {
-        return $this->melon['SONGINFO']['SONGID'];
+        return $this->melon->getId();
     }
 
     /**
@@ -40,7 +42,7 @@ class SongResource extends Resource implements SongResourceInterface
      */
     public function getTitle(): string
     {
-        return $this->melon['SONGINFO']['SONGNAME'];
+        return $this->melon->getTitle();
     }
 
     /**
@@ -48,7 +50,7 @@ class SongResource extends Resource implements SongResourceInterface
      */
     public function getAlbumId(): int
     {
-        return $this->melon['SONGINFO']['ALBUMID'];
+        return $this->melon->getAlbumId();
     }
 
     /**
@@ -56,7 +58,7 @@ class SongResource extends Resource implements SongResourceInterface
      */
     public function getArtworkImagePath(): ?string
     {
-        return self::emptyToNull($this->melon['SONGINFO']['ALBUMIMG']);
+        return $this->melon->getArtworkImagePath();
     }
 
     /**
