@@ -10,6 +10,8 @@ use Cable8mm\WaterMelon\MelonAlbum;
  *
  * @since  2023-03-20
  *
+ * @property MelonAlbum $melon
+ *
  * @example AlbumResource::make($waterMelon->getAlbum());
  */
 class AlbumResource extends Resource implements AlbumResourceInterface
@@ -22,10 +24,10 @@ class AlbumResource extends Resource implements AlbumResourceInterface
     public function toArray(): array
     {
         return [
-            'melon_albumid' => $this->melon['ALBUMINFO']['ALBUMID'],
-            'title' => $this->melon['ALBUMINFO']['ALBUMNAME'],
-            'album_cover_path' => $this->melon['ALBUMINFO']['ALBUMIMG'],
-            'released_at' => $this->melon['ALBUMINFO']['ISSUEDATE'],
+            'melon_albumid' => $this->melon->getId(),
+            'title' => $this->melon->getTitle(),
+            'album_cover_path' => $this->melon->getAlbumCoverPath(),
+            'released_at' => $this->melon->getReleasedAt(),
         ];
     }
 
@@ -34,7 +36,7 @@ class AlbumResource extends Resource implements AlbumResourceInterface
      */
     public function getMelonAlbumId(): int
     {
-        return $this->melon['ALBUMINFO']['ALBUMID'];
+        return $this->melon->getId();
     }
 
     /**
@@ -42,7 +44,7 @@ class AlbumResource extends Resource implements AlbumResourceInterface
      */
     public function getTitle(): string
     {
-        return $this->melon['ALBUMINFO']['ALBUMNAME'];
+        return $this->melon->getTitle();
     }
 
     /**
@@ -50,7 +52,7 @@ class AlbumResource extends Resource implements AlbumResourceInterface
      */
     public function getAlbumCoverPath(): ?string
     {
-        return self::emptyToNull($this->melon['ALBUMINFO']['ALBUMIMG']);
+        return $this->melon->getAlbumCoverPath();
     }
 
     /**
@@ -58,7 +60,7 @@ class AlbumResource extends Resource implements AlbumResourceInterface
      */
     public function getReleasedAt(): ?string
     {
-        return $this->melon['ALBUMINFO']['ISSUEDATE'];
+        return $this->melon->getReleasedAt();
     }
 
     /**

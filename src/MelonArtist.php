@@ -4,7 +4,6 @@ namespace Cable8mm\WaterMelon;
 
 use Cable8mm\WaterMelon\Contracts\ArtistInterface;
 use Cable8mm\WaterMelon\Exceptions\MelonApiException;
-use Cable8mm\WaterMelon\Resources\ArtistNullResource;
 use GuzzleHttp\Exception\RequestException;
 
 /**
@@ -72,7 +71,7 @@ class MelonArtist extends Melon implements ArtistInterface
      */
     public function getFeaturedImagePath(): ?string
     {
-        return ArtistNullResource::emptyToNull($this->response['ARTISTIMGLARGE'] ?? null);
+        return parent::emptyToNull($this->response['ARTISTIMGLARGE'] ?? null);
     }
 
     /**
@@ -80,7 +79,7 @@ class MelonArtist extends Melon implements ArtistInterface
      */
     public function getProfileImagePath(): ?string
     {
-        return ArtistNullResource::emptyToNull($this->response['POSTIMG'] ?? null);
+        return parent::emptyToNull($this->response['POSTIMG'] ?? null);
     }
 
     /**

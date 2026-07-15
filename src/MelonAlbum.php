@@ -4,7 +4,6 @@ namespace Cable8mm\WaterMelon;
 
 use Cable8mm\WaterMelon\Contracts\AlbumInterface;
 use Cable8mm\WaterMelon\Exceptions\MelonApiException;
-use Cable8mm\WaterMelon\Resources\AlbumNullResource;
 use GuzzleHttp\Exception\RequestException;
 
 /**
@@ -72,7 +71,7 @@ class MelonAlbum extends Melon implements AlbumInterface
      */
     public function getAlbumCoverPath(): ?string
     {
-        return AlbumNullResource::emptyToNull($this->response['ALBUMINFO']['ALBUMIMG'] ?? null);
+        return parent::emptyToNull($this->response['ALBUMINFO']['ALBUMIMG'] ?? null);
     }
 
     /**

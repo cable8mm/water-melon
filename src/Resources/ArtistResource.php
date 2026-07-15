@@ -9,6 +9,8 @@ use Cable8mm\WaterMelon\MelonArtist;
  * Artist resource for mapping from melon.com.
  *
  * @since  2023-03-20
+ *
+ * @property MelonArtist $melon
  */
 class ArtistResource extends Resource implements ArtistResourceInterface
 {
@@ -20,13 +22,13 @@ class ArtistResource extends Resource implements ArtistResourceInterface
     public function toArray(): array
     {
         return [
-            'melon_artistid' => $this->melon['ARTISTID'],
-            'name' => $this->melon['ARTISTNAME'],
-            'featured_image_path' => $this->melon['ARTISTIMGLARGE'],
-            'profile_image_path' => $this->melon['POSTIMG'],
+            'melon_artistid' => $this->melon->getId(),
+            'name' => $this->melon->getName(),
+            'featured_image_path' => $this->melon->getFeaturedImagePath(),
+            'profile_image_path' => $this->melon->getProfileImagePath(),
             'birth' => null,
             'sns' => null,
-            'debut' => $this->melon['ARTISTNOTEINFO']['ISSUEDATE'] ?? null,
+            'debut' => $this->melon->getDebut(),
             'activity_regiment' => null,
             'activity_type' => null,
             'agency' => null,
@@ -39,7 +41,7 @@ class ArtistResource extends Resource implements ArtistResourceInterface
      */
     public function getMelonArtistId(): int
     {
-        return $this->melon['ARTISTID'];
+        return $this->melon->getId();
     }
 
     /**
@@ -47,7 +49,7 @@ class ArtistResource extends Resource implements ArtistResourceInterface
      */
     public function getName(): string
     {
-        return $this->melon['ARTISTNAME'];
+        return $this->melon->getName();
     }
 
     /**
@@ -55,7 +57,7 @@ class ArtistResource extends Resource implements ArtistResourceInterface
      */
     public function getFeaturedImagePath(): ?string
     {
-        return self::emptyToNull($this->melon['ARTISTIMGLARGE']);
+        return $this->melon->getFeaturedImagePath();
     }
 
     /**
@@ -63,7 +65,7 @@ class ArtistResource extends Resource implements ArtistResourceInterface
      */
     public function getProfileImagePath(): ?string
     {
-        return self::emptyToNull($this->melon['POSTIMG']);
+        return $this->melon->getProfileImagePath();
     }
 
     /**
@@ -71,7 +73,7 @@ class ArtistResource extends Resource implements ArtistResourceInterface
      */
     public function getDebut(): ?string
     {
-        return $this->melon['ARTISTNOTEINFO']['ISSUEDATE'] ?? null;
+        return $this->melon->getDebut();
     }
 
     /**

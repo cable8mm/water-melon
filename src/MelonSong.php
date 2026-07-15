@@ -4,7 +4,6 @@ namespace Cable8mm\WaterMelon;
 
 use Cable8mm\WaterMelon\Contracts\SongInterface;
 use Cable8mm\WaterMelon\Exceptions\MelonApiException;
-use Cable8mm\WaterMelon\Resources\SongNullResource;
 use GuzzleHttp\Exception\RequestException;
 
 /**
@@ -86,6 +85,6 @@ class MelonSong extends Melon implements SongInterface
      */
     public function getArtworkImagePath(): ?string
     {
-        return SongNullResource::emptyToNull($this->response['SONGINFO']['ALBUMIMG'] ?? null);
+        return parent::emptyToNull($this->response['SONGINFO']['ALBUMIMG'] ?? null);
     }
 }
