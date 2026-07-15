@@ -1,5 +1,13 @@
 # Release Notes
 
+## v1.2.1 - 2026-07-15
+
+### What's Changed
+
+* refactor: remove duplicate codes by [@cable8mm](https://github.com/cable8mm) in https://github.com/cable8mm/water-melon/pull/13
+
+**Full Changelog**: https://github.com/cable8mm/water-melon/compare/v1.2.0...v1.2.1
+
 ## v1.2.0 - 2026-07-07
 
 ### What's Changed
